@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-primary: #050816;
+  --color-dark-secondary: #aaa6c3;
+  --color-dark-tertiary: #151030;
+
+  --color-neon-blue: #00f3ff;
+  --color-neon-purple: #7b2ff7;
+  --color-neon-pink: #ff00e5;
+  --color-neon-cyan: #0ea5e9;
+
+  --shadow-card: 0px 35px 120px -15px #211e35;
+  --shadow-neon: 0 0 10px #7b2ff7, 0 0 40px #7b2ff7;
+
+  --font-arabic: 'Cairo', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+
+  --breakpoint-xs: 450px;
+}
+
+/* Custom Gradients */
+@utility green-pink-gradient {
+  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+}
+
+@utility purple-gradient {
+  background: linear-gradient(180deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
+}
+
+@utility blue-text-gradient {
+  background: linear-gradient(#56ccf2, #2f80ed);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility green-text-gradient {
+  background: linear-gradient(#11998e, #38ef7d);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility pink-text-gradient {
+  background: linear-gradient(#ec008c, #fc6767);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Global Styles */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #050816;
+    color: white;
+    overflow-x: hidden;
+    font-family: var(--font-arabic), var(--font-inter);
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background-color: transparent;
+  }
+
+  .neon-border {
+    border: 1px solid var(--color-neon-purple);
+    box-shadow: var(--shadow-neon);
+  }
+
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7b2ff7;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff00e5;
+}
